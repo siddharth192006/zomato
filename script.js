@@ -54,7 +54,7 @@ const restaurants = [
         cuisine: "Japanese, Sushi, Asian",
         rating: 4.6,
         reviews: 450,
-        image: "https://images.unsplash.com/photo-1527515862127-a3c754a43c4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcP5tVKsp_94t7lzEmq59zjebh5b6Tzai1LQ&s",
         deliveryTime: "20-30 min",
         price: "₹250",
         menu: [
@@ -134,7 +134,7 @@ const restaurants = [
         cuisine: "Chinese, Noodles, Fried Rice",
         rating: 4.3,
         reviews: 380,
-        image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        image: "http://t1.gstatic.com/images?q=tbn:ANd9GcRgBWNsnloS5kflwpS9060VCUZDULSTYg1AtD8k4T3CeLJtYig_8itQRoT1x8UYCN8PU-cGlZu2",
         deliveryTime: "30-40 min",
         price: "₹242",
         menu: [
