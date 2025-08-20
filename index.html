@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato - Discover the Best Food</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://mobopro-ef442.web.app/assets/images/favicon.png">
+    <meta name="description" content="Zomato - Discover the best food delivery options near you. Order from top restaurants for fast delivery in Delhi, Mumbai, Bangalore, Hyderabad and other cities.">
+    <meta name="keywords" content="zomato, food delivery, online food order, restaurant near me, food ordering app, delivery food, order food online">
+    <meta name="author" content="Zomato Clone">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Zomato - Food Delivery & Restaurant Finder">
+    <meta property="og:description" content="Order food online from the best restaurants near you. Fast delivery, great prices, and exclusive deals only on Zomato.">
+    <meta property="og:image" content="https://mobopro-ef442.web.app/assets/images/favicon.png">
+    <meta property="og:url" content="https://zomato-clone.example.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zomato - Food Delivery & Restaurant Finder">
+    <meta name="twitter:description" content="Order food online from the best restaurants near you. Fast delivery, great prices, and exclusive deals.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80">
+    <link rel="canonical" href="https://mobopro-ef442.web.app/assets/images/favicon.png">
+    <title>Zomato - Food Delivery & Restaurant Finder | Order Food Online</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>Zomato</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                    <li class="user-menu" style="display: none;">
+                        <a href="#" class="user-icon"><i class="fas fa-user-circle"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Profile</a>
+                            <a href="#">Orders</a>
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="login-container" id="loginPage">
+            <div class="login-form animate__animated animate__fadeIn">
+                <h2>Login to Zomato</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                        <span class="toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                    <div class="remember-forgot">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="login-btn">
+                        <span>Login</span>
+                        <div class="btn-loading" style="display: none;">
+                            <div class="spinner"></div>
+                        </div>
+                    </button>
+                </form>
+                <div class="social-login">
+                    <p>Or login with</p>
+                    <div class="social-buttons">
+                        <button class="social-btn google-btn">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button class="social-btn facebook-btn">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+                <div class="signup-link">
+                    Don't have an account? <a href="#">Sign up</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard" id="dashboard">
+            <div class="dashboard-header">
+                <h2>Welcome to Zomato</h2>
+                <p>Discover the best food & drinks in your city</p>
+                <div class="location-selector">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <select id="locationSelect">
+                        <option value="delhi">Delhi</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="hyderabad">Hyderabad</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search for restaurants or cuisine">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Delivery</button>
+                    <button class="filter-btn">Dine-out</button>
+                    <button class="filter-btn">Rating: 4.0+</button>
+                </div>
+            </div>
+
+            <div class="restaurant-grid" id="restaurantGrid">
+                <!-- Restaurant cards will be dynamically loaded here -->
+            </div>
+
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="load-more-btn">Load More Restaurants</button>
+            </div>
+        </div>
+
+        <!-- Order Modal -->
+        <div class="modal" id="orderModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalRestaurantName">Order Food</h3>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="menu-items" id="menuItems">
+                        <!-- Menu items will be dynamically loaded here -->
+                    </div>
+                    <div class="order-summary">
+                        <h4>Order Summary</h4>
+                        <div id="orderItems">
+                            <!-- Order items will be dynamically loaded here -->
+                        </div>
+                        <div class="order-total">
+                            <p>Total: <span id="orderTotal">₹0</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="placeOrderBtn" class="place-order-btn">Place Order</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Confirmation Modal -->
+        <div class="modal" id="confirmationModal">
+            <div class="modal-content confirmation-content">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Order Placed Successfully!</h3>
+                <p>Your order has been placed and will be delivered soon.</p>
+                <p>Order ID: <span id="orderId">ZMTO-12345</span></p>
+                <button id="closeConfirmationBtn" class="confirm-btn">Done</button>
+            </div>
+        </div>
+
+        <div class="toast-container" id="toastContainer"></div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zomato</h3>
+                    <p>Find the best restaurants, cafés and bars in India</p>
+                </div>
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Culture</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#">Help & Support</a></li>
+                        <li><a href="#">Partner with us</a></li>
+                        <li><a href="#">Ride with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Zomato Clone. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
