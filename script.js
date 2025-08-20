@@ -487,7 +487,7 @@ function setupEventListeners() {
         
         // Simulate API call
         setTimeout(function() {
-            if (email === 'zomato@2025' && password === 'zomato') {
+            if (email === 'user@gmail.com' && password === 'zomato') {
                 // Save email if remember me is checked
                 if (rememberMe.checked) {
                     localStorage.setItem('rememberedEmail', email);
@@ -627,3 +627,4 @@ function setupEventListeners() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
